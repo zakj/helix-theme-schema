@@ -5,6 +5,8 @@ This allows for a bit of validation and completion when writing themes.
 It includes documentation scraped from the [docs][] for some known properties.
 Note that taplo's auto-completion does not understand that dotted properties must be quoted!
 
+![Screenshot showing a documentation popup while editing a theme.](screenshot.png)
+
 ## Usage
 
 There's no need to have a copy of this repository locally.
