@@ -11,11 +11,12 @@
       "type": "string"
     },
     "color": {
-      "oneOf": [
+      "anyOf": [
         {
           "$ref": "#/$defs/hexColor"
         },
         {
+          "$comment": "TODO: Ideally this would validate against keys from palette.",
           "$ref": "#/$defs/namedColor"
         }
       ],
