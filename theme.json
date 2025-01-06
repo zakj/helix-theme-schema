@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft-04/schema",
+  "title": "Helix theme",
+  "type": "object",
+  "$defs": {
+    "hexColor": {
+      "type": "string",
+      "pattern": "#[0-9a-fA-F]{6}"
+    },
+    "namedColor": {
+      "type": "string"
+    },
+    "color": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/hexColor"
+        },
+        {
+          "$ref": "#/$defs/namedColor"
+        }
+      ],
+      "type": "string"
+    },
+    "style": {
+      "type": "object",
+      "properties": {
+        "fg": {
+          "$ref": "#/$defs/color"
+        },
+        "bg": {
+          "$ref": "#/$defs/color"
+        },
+        "underline": {
+          "type": "object",
+          "properties": {
+            "color": {
+              "$ref": "#/$defs/color"
+            },
+            "style": {
+              "type": "string",
+              "enum": [
+                "line",
+                "curl",
+                "dashed",
+                "dotted",
+                "double_line"
+              ]
+            },
+            "additionalProperties": false
+          }
+        },
+        "modifiers": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "bold",
+              "dim",
+              "italic",
+              "underlined",
+              "slow_blink",
+              "rapid_blink",
+              "reversed",
+              "hidden",
+              "crossed_out"
+            ]
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "properties": {
+    "palette": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/hexColor"
+      }
+    }
+  },
+  "additionalProperties": {
+    "oneOf": [
+      {
+        "$ref": "#/$defs/style"
+      },
+      {
+        "$ref": "#/$defs/color"
+      }
+    ]
+  },
+  "required": [
+    "ui.selection"
+  ]
+}
