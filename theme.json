@@ -69,6 +69,16 @@
         }
       },
       "additionalProperties": false
+    },
+    "styleOrColor": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ]
     }
   },
   "properties": {
@@ -77,17 +87,735 @@
       "additionalProperties": {
         "$ref": "#/$defs/hexColor"
       }
+    },
+    "ui.background": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ]
+    },
+    "ui.background.separator": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Picker separator below input line"
+    },
+    "ui.cursor": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ]
+    },
+    "ui.cursor.normal": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ]
+    },
+    "ui.cursor.insert": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ]
+    },
+    "ui.cursor.select": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ]
+    },
+    "ui.cursor.match": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Matching bracket etc."
+    },
+    "ui.cursor.primary": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Cursor with primary selection"
+    },
+    "ui.cursor.primary.normal": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ]
+    },
+    "ui.cursor.primary.insert": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ]
+    },
+    "ui.cursor.primary.select": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ]
+    },
+    "ui.debug.breakpoint": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Breakpoint indicator, found in the gutter"
+    },
+    "ui.debug.active": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Indicator for the line at which debugging execution is paused at, found in the gutter"
+    },
+    "ui.gutter": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Gutter"
+    },
+    "ui.gutter.selected": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Gutter for the line the cursor is on"
+    },
+    "ui.linenr": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Line numbers"
+    },
+    "ui.linenr.selected": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Line number for the line the cursor is on"
+    },
+    "ui.statusline": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Statusline"
+    },
+    "ui.statusline.inactive": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Statusline (unfocused document)"
+    },
+    "ui.statusline.normal": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ]
+    },
+    "ui.statusline.insert": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ]
+    },
+    "ui.statusline.select": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ]
+    },
+    "ui.statusline.separator": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Separator character in statusline"
+    },
+    "ui.bufferline": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Style for the buffer line"
+    },
+    "ui.bufferline.active": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Style for the active buffer in buffer line"
+    },
+    "ui.bufferline.background": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Style for bufferline background"
+    },
+    "ui.popup": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Documentation popups (e.g. Space + k)"
+    },
+    "ui.popup.info": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Prompt for multiple key options"
+    },
+    "ui.picker.header": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Header row area in pickers with multiple columns"
+    },
+    "ui.picker.header.column": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Column names in pickers with multiple columns"
+    },
+    "ui.picker.header.column.active": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "The column name in pickers with multiple columns where the cursor is entering into."
+    },
+    "ui.window": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Borderlines separating splits"
+    },
+    "ui.help": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Description box for commands"
+    },
+    "ui.text": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Default text style, command prompts, popup text, etc."
+    },
+    "ui.text.focus": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "The currently selected line in the picker"
+    },
+    "ui.text.inactive": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ]
+    },
+    "ui.text.info": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ]
+    },
+    "ui.text.directory": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Directory names in prompt completion"
+    },
+    "ui.virtual.ruler": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ]
+    },
+    "ui.virtual.whitespace": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Visible whitespace characters"
+    },
+    "ui.virtual.indent-guide": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Vertical indent width guides"
+    },
+    "ui.virtual.inlay-hint": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Default style for inlay hints of all kinds"
+    },
+    "ui.virtual.inlay-hint.parameter": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ]
+    },
+    "ui.virtual.inlay-hint.type": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ]
+    },
+    "ui.virtual.wrap": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ]
+    },
+    "ui.virtual.jump-label": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Style for virtual jump labels"
+    },
+    "ui.menu": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Code and command completion menus"
+    },
+    "ui.menu.selected": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Selected autocomplete item"
+    },
+    "ui.menu.scroll": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ]
+    },
+    "ui.selection": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "For selections in the editing area"
+    },
+    "ui.selection.primary": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ]
+    },
+    "ui.highlight": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Highlighted lines in the picker preview"
+    },
+    "ui.highlight.frameline": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Line at which debugging execution is paused at"
+    },
+    "ui.cursorline.primary": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ]
+    },
+    "ui.cursorline.secondary": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ]
+    },
+    "ui.cursorcolumn.primary": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ]
+    },
+    "ui.cursorcolumn.secondary": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ]
+    },
+    "warning": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Diagnostics warning (gutter)"
+    },
+    "error": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Diagnostics error (gutter)"
+    },
+    "info": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Diagnostics info (gutter)"
+    },
+    "hint": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Diagnostics hint (gutter)"
+    },
+    "diagnostic": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Diagnostics fallback style (editing area)"
+    },
+    "diagnostic.hint": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Diagnostics hint (editing area)"
+    },
+    "diagnostic.info": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Diagnostics info (editing area)"
+    },
+    "diagnostic.warning": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Diagnostics warning (editing area)"
+    },
+    "diagnostic.error": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Diagnostics error (editing area)"
+    },
+    "diagnostic.unnecessary": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Diagnostics with unnecessary tag (editing area)"
+    },
+    "diagnostic.deprecated": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Diagnostics with deprecated tag (editing area)"
     }
   },
   "additionalProperties": {
-    "oneOf": [
-      {
-        "$ref": "#/$defs/style"
-      },
-      {
-        "$ref": "#/$defs/color"
-      }
-    ]
+    "$ref": "#/$defs/styleOrColor"
   },
   "required": [
     "ui.selection"

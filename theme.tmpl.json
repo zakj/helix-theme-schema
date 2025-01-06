@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft-04/schema",
+  "title": "Helix theme",
+  "type": "object",
+  "$defs": {
+    "hexColor": {
+      "type": "string",
+      "pattern": "#[0-9a-fA-F]{6}"
+    },
+    "namedColor": {
+      "type": "string"
+    },
+    "color": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/hexColor"
+        },
+        {
+          "$comment": "TODO: Ideally this would validate against keys from palette.",
+          "$ref": "#/$defs/namedColor"
+        }
+      ],
+      "type": "string"
+    },
+    "style": {
+      "type": "object",
+      "properties": {
+        "fg": {
+          "$ref": "#/$defs/color"
+        },
+        "bg": {
+          "$ref": "#/$defs/color"
+        },
+        "underline": {
+          "type": "object",
+          "properties": {
+            "color": {
+              "$ref": "#/$defs/color"
+            },
+            "style": {
+              "type": "string",
+              "enum": [
+                "line",
+                "curl",
+                "dashed",
+                "dotted",
+                "double_line"
+              ]
+            },
+            "additionalProperties": false
+          }
+        },
+        "modifiers": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "bold",
+              "dim",
+              "italic",
+              "underlined",
+              "slow_blink",
+              "rapid_blink",
+              "reversed",
+              "hidden",
+              "crossed_out"
+            ]
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "styleOrColor": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ]
+    }
+  },
+  "properties": {
+    "palette": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/hexColor"
+      }
+    }
+  },
+  "additionalProperties": {
+    "$ref": "#/$defs/styleOrColor"
+  },
+  "required": [
+    "ui.selection"
+  ]
+}
