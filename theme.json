@@ -812,6 +812,17 @@
         }
       ],
       "description": "Diagnostics with deprecated tag (editing area)"
+    },
+    "tabstop": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/style"
+        },
+        {
+          "$ref": "#/$defs/color"
+        }
+      ],
+      "description": "Snippet placeholder"
     }
   },
   "additionalProperties": {
